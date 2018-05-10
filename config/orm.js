@@ -23,14 +23,14 @@ var orm = {
   
       console.log(queryString);
   
-      connection.query(tableInput, updateCol, valofUpdatedCol, colToSearch, valOfCol], function(
+      connection.query(queryString, [tableInput, updateCol, valofUpdatedCol, colToSearch, valOfCol], function(
         err,
         result
       ) {
         if (err) throw err;
         console.log(result);
       });
-    }
+    } 
   };
   
   module.exports = orm;
