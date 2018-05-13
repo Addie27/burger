@@ -1,9 +1,42 @@
-<h2>Eat Da Burger</h2>
+<div class="container">
+  <h1 class="title">Eat Da Burger</h1>
 
-<ul>
-  {{#each burgers}}
-    
-  {{/each}}
-</ul>
+  <div class="row">
+
+    <div class="col-md-4">
+      <div class="panel panel-default">
+        <div class="panel-heading">Burgers to eat!</div>
+        <div class="panel-body">
+          <ul>
+            {{#each data}} 
+            <li>{{burger_name}}</li>
+            {{/each}}
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <img class="image" src="/assets/images/burger.png" />
+
+      <div class="form-group">
+        <label for="burger">Input a burger you want to eat!</label>
+        <input type="text" class="form-control" id="burgerInput">
+        <button type="submit" class="btn btn-default">Submit</button>
+      </div>
+    </div>
 
 
+    <div class="col-md-4">
+      <div class="panel panel-default">
+        <div class="panel-heading">Burgers already eaten!</div>
+        <div class="panel-body">
+          <ul>
+           
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
