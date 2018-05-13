@@ -6,24 +6,21 @@ var burgers = require("../models/burger.js");
 
 router.get("/", function(req, res) {
   burgers.all(function(data) {
-    // burgersObj = {
-    //   burgers: data
-    // }
-    console.log(data);
+    // console.log(data);
     res.render("index", {data});
   });
 });
 
-// router.post("/api/burgers", function(req, res) {
-//   burger.create([
-//     "burger_name", "devoured"
-//   ], [
-//     req.body.burger_name, req.body.devoured
-//   ], function(result) {
-//     // Send back the ID of the new quote
-//     res.json({ id: result.insertId });
-//   });
-// });
+router.post("/create", function(req, res) {
+  burgers.create([
+    "burger_name", "devoured"
+  ],[
+    req.body.burger_name, req.body.devoured 
+  ], function(result) {
+    // Send back the ID of the new quote
+    res.json({ id: result.insertId });
+  });
+});
 
 // router.put("/api/burgers/:id", function(req, res) {
 //   var condition = "id = " + req.params.id;
