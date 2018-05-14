@@ -10,7 +10,7 @@
           <ul>
             {{#each data}}
             <li>{{burger_name}}
-              <button type="button" class="btn btn-warning">Devour!</button>
+              <button type="button" data-id="{{id}}" class="devour" class="btn btn-warning">Devour!</button>
             </li>
             {{/each}}
           </ul>
@@ -35,7 +35,9 @@
         <div class="panel-heading">Burgers already eaten!</div>
         <div class="panel-body">
           <ul>
-
+            {{#each result}}
+            <li>{{burger_name}}
+            {{/each}}
           </ul>
         </div>
       </div>
