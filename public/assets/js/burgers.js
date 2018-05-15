@@ -17,6 +17,7 @@ $(function() {
     });
   
     $(".devour").on("click", function(event) {
+      event.preventDefault();
       var id = $(this).data("id");
       var devoured = $(this).data("devoured"); 
   
@@ -32,6 +33,7 @@ $(function() {
           
       });
       location.reload();
+      
     });
   
   

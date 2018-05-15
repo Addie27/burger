@@ -10,23 +10,22 @@ var uneaten = [];
 
 router.get("/", function (req, res) {
   burgers.all(function (data) {
-    
+
     for (var i = 0; i < data.length; i++) {
-      
+
       if (data[i].devoured === 0) {
         uneaten.push(data[i])
       }
       else {
         eaten.push(data[i])
-        
+
       }
       
-    } 
-
+    }
+    res.render("index", { eaten, uneaten })
   })
 
-  res.render("index", { eaten, uneaten })
-    // res.render("index", { eaten })
+  
 }),
 
 
