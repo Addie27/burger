@@ -4,40 +4,54 @@ var router = express.Router();
 
 var burgers = require("../models/burger.js");
 
-router.get("/", function(req, res) {
-  burgers.all(function(data) {
-    // console.log(data);
-    res.render("index", {data});
-  });
-});
 
-router.post("/create", function(req, res) {
-  burgers.create([
-    "burger_name", "devoured"
-  ],[
-    req.body.burger_name, req.body.devoured 
-  ], function(result) {
-    // Send back the ID of the new quote
-    res.json({ id: result.insertId });
-  });
-});
+var eaten = [];
+var uneaten = [];
 
-router.put("/update:id", function(req, res) {
+router.get("/", function (req, res) {
+  burgers.all(function (data) {
+    
+    for (var i = 0; i < data.length; i++) {
+      
+      if (data[i].devoured === 0) {
+        uneaten.push(data[i])
+      }
+      else {
+        eaten.push(data[i])
+        
+      }
+      
+    } 
+
+  })
+
+  res.render("index", { eaten, uneaten })
+    // res.render("index", { eaten })
+}),
+
+
+  router.post("/create", function (req, res) {
+    burgers.create([
+      "burger_name", "devoured"
+    ], [
+        req.body.burger_name, req.body.devoured
+      ], function (result) {
+        // Send back the ID of the new quote
+        res.json({ id: result.insertId });
+      });
+  });
+
+router.put("/update:id", function (req, res) {
   var condition = "id = " + req.params.id;
-
-  console.log("condition", condition);
 
   burgers.update({
     devoured: req.body.devoured
-  }, condition, function(result) {
-    if (result.changedRows == 0) {
-      // If no rows were changed, then the ID must not exist, so 404
-      return res.status(404).end();
-    } else {
-      res.status(200).end();
-    }
+  }, condition, function (result) {
+
   });
 });
+
+
 
 // Export routes for server.js to use.
 module.exports = router;

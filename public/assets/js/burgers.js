@@ -28,12 +28,10 @@ $(function() {
       $.ajax("/update" + id, {
         type: "PUT",
         data: updateDevoured}).then( function(data) { 
-          console.log(data);
-         
           // Reload the page to get the updated list
-          location.reload();
-        
+          
       });
+      location.reload();
     });
   
   

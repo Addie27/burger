@@ -8,7 +8,7 @@
         <div class="panel-heading">Burgers to eat!</div>
         <div class="panel-body">
           <ul>
-            {{#each data}}
+            {{#each uneaten}}
             <li>{{burger_name}}
               <button type="button" data-id="{{id}}" class="devour" class="btn btn-warning">Devour!</button>
             </li>
@@ -20,7 +20,7 @@
 
     <div class="col-md-4">
       <img class="image" src="/assets/images/burger.png" />
-      <form method = "POST" action="/create">
+      <form method="POST" action="/create">
         <div class="form-group">
           <label for="burger">Input a burger you want to eat!</label>
           <input type="text" class="form-control" id="burgerInput">
@@ -35,8 +35,9 @@
         <div class="panel-heading">Burgers already eaten!</div>
         <div class="panel-body">
           <ul>
-            {{#each result}}
+            {{#each eaten}}
             <li>{{burger_name}}
+            </li>
             {{/each}}
           </ul>
         </div>
