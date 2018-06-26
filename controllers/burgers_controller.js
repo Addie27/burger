@@ -9,6 +9,8 @@ var eaten = [];
 var uneaten = [];
 
 router.get("/", function (req, res) {
+  eaten = [];
+  uneaten = [];
   burgers.all(function (data) {
 
     for (var i = 0; i < data.length; i++) {
