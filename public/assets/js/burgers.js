@@ -9,7 +9,7 @@ $(function () {
     console.log(newBurger);
 
     $.post("/create", newBurger, function (data) {
-      
+
       location.reload();
     })
 
@@ -29,7 +29,7 @@ $(function () {
       type: "PUT",
       data: updateDevoured
     }).then(function (data) {
-      
+
 
     });
     location.reload();

@@ -1,0 +1,38 @@
+body {
+	background-color: yellow;
+
+}
+
+.title {
+	text-align: center;
+	font-size: 50px;
+}
+
+.panel-heading {
+	font-size: 20px;
+}
+
+.image {
+	width: 200px;
+	height: 300px;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+}
+
+label {
+	font-size: 20px; 
+}
+
+.panel-body {
+	height: 50% !important;
+}
+
+.input {
+	text-align: center;
+}
+
+form {
+	display: inline-block;
+	
+}

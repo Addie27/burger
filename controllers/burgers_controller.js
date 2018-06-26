@@ -22,14 +22,12 @@ router.get("/", function (req, res) {
         eaten.push(data[i])
 
       }
-      
+
     }
     res.render("index", { eaten, uneaten })
   })
 
-  
 }),
-
 
   router.post("/create", function (req, res) {
     burgers.create([
@@ -52,7 +50,4 @@ router.put("/update:id", function (req, res) {
   });
 });
 
-
-
-// Export routes for server.js to use.
 module.exports = router;
