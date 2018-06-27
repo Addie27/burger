@@ -4,4 +4,6 @@ This burger log was created with MySQL, Node, Express, Handlebars and a homemade
 
 To access the app, you will need to NPM install, update your own username and password in the connection.js file, and run `node server.js` in the command line. 
 
+Or to see how it works - it is deployed through Heroku: https://powerful-refuge-73813.herokuapp.com/ 
+
 
